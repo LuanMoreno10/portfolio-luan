@@ -1,0 +1,343 @@
+:root{
+  --bg:#0b0c10; 
+  --surface:#121319; 
+  --text:#e8e8ee; 
+  --muted:#a9acb6;
+  --brand:#6dd3fb; 
+  --accent:#a78bfa; 
+  --card:#151724; 
+  --radius:16px;
+}
+
+*{box-sizing:border-box} 
+
+body{
+    margin:0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    justify-content: center;
+    background: linear-gradient(135deg, #08161c 0%, #2c5364 100%);
+    color:var(--text);
+    line-height:1.5;
+}
+
+.container{
+    max-width:1150px;
+    margin:0 auto;
+    padding:0 20px
+}
+
+.navbar{
+    position:sticky;
+    top:0;
+    backdrop-filter:blur(8px);
+}
+
+.navbar a{
+    color:var(--text);
+    text-decoration:none;
+    font-weight:500;
+    margin-left:20px;
+    transition:color .2s
+}
+
+.navbar a:hover{
+    color:var(--brand)
+}
+
+.navbar-inner {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin: 0 auto;
+}
+
+/* Mobile Menu */
+.mobile-nav-links {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(18, 19, 25, 0.8); /* Transparent glass-like background */
+    backdrop-filter: blur(8px); /* Blur effect for glassmorphism */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.mobile-nav-links a:hover {
+    color: var(--brand);
+}
+
+.mobile-nav-links.open {
+    display: flex;
+    transform: translateY(0);
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text);
+    cursor: pointer;
+    z-index: 1100;
+}
+
+@media (max-width: 768px) {
+    .menu-button {
+        display: block;
+    }
+
+    .nav-links {
+        display: none; /* Hide desktop links */
+    }
+
+    .mobile-nav-links {
+        display: none; /* Ensure mobile menu is hidden by default */
+    }
+}
+
+@media (min-width: 769px) {
+    .mobile-nav-links {
+        display: none; /* Ensure mobile menu is hidden on larger screens */
+    }
+}
+
+.brand{
+    display:flex;
+    gap:4px;
+    align-items:center;
+    font-weight:700
+}
+
+.hero-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 20px 32px 20px;
+}
+
+.profile-img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  background: transparent;
+  border: none;
+}
+
+.hero-info {
+  text-align: center;
+  max-width: 540px;
+}
+
+.hero-role {
+  color: var(--muted);
+  font-size: 1.1rem;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.hero-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 16px;
+    border-radius: 24px;
+    font-size: 1rem;
+    font-weight: 500;
+    border: 0;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    background: linear-gradient(135deg,var(--brand),var(--accent));
+    text-decoration: none;
+}
+
+.btn:hover {
+    box-shadow: 0 4px 16px rgba(109,211,251,0.15);
+}
+
+.btn-primary {
+  background: var(--brand);
+  color: #fff;
+  border: 2px solid var(--brand);
+}
+
+.btn-outline {
+  background: #fff;
+  color: var(--brand);
+  border: 2px solid var(--brand);
+}
+
+@media (max-width: 768px) {
+  p {
+    text-align: justify;
+  }
+}
+
+.kicker{
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:.15em;
+    font-size:.9rem
+}
+
+.card{
+    background:var(--card);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border:1px solid #2a2d3a;
+    border-radius:var(--radius);
+    overflow:hidden
+}
+
+.card-body{
+    padding:16px
+}
+
+.badge{
+    display:inline-block;
+    background:#6dd3fb44;
+    padding:4px 10px;
+    border-radius:999px;
+    font-size:.75rem
+}
+.section{
+    padding: 20px 0;
+}
+.section-title{
+    margin:0 0 10px;
+    font-size:1.6rem
+}
+.section-sub{
+    color:var(--muted);
+    margin:0 0 20px
+}
+.tags{
+    display:flex;
+    gap:6px;
+    flex-wrap:wrap
+}
+.tag{
+    font-size:.75rem;
+    color:var(--muted);
+    border:1px dashed #2a2d3a;
+    padding:3px 8px;
+    border-radius:999px
+}
+
+.card a{
+    text-decoration:none;
+    color:var(--text);
+    transition:color .2s;
+    &:hover{color:var(--brand)}
+}
+
+.form{
+    display:grid;
+    gap:12px
+}
+
+.input, .textarea{
+    width:100%;
+    padding:12px 14px;
+    border-radius:12px;
+    border:1px solid #2a2d3a;
+    background:var(--surface);
+    color:var(--text)
+}
+
+/* Skills */
+.stacks-row {
+    display: flex-wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.skils-icons {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+}
+
+/* Contact Area */
+.contact-centered {
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 10px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;     
+}
+
+.cemail-btn, .clinkedin-btn {
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 8px;
+    transition: box-shadow 0.2s;
+    text-decoration: none;
+    background: none;      /* Remove background */
+    box-shadow: none;      /* Remove shadow */
+}
+.cemail-btn:hover {
+    box-shadow: 0 4px 16px rgba(109,211,251,0.15);
+}
+.clinkedin-btn:hover {
+    box-shadow: 0 4px 16px rgba(109,211,251,0.15);
+}
+
+.footer{
+    color:#a9acb6;
+    text-align:center;
+    border-top:1px solid #2a2d3a;
+    margin-top: 15px;
+}
+
+
+@media (max-width:900px){
+    .grid-3{
+        grid-template-columns:1fr
+    }
+    .grid-2{
+        grid-template-columns:1fr
+    }
+}
