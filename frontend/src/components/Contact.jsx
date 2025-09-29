@@ -68,6 +68,41 @@ export default function Contact(){
                 aria-label="LinkedIn"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => {
+                    // Try to open the LinkedIn app on mobile first, then fall back to web LinkedIn.
+                    // Keep the href so desktop users/open-in-new-tab still get a useful link.
+                    try {
+                        e.preventDefault();
+                    } catch (err) {
+                        // ignore
+                    }
+
+                    const webLinkedIn = 'https://www.linkedin.com/in/luan-moreno10/';
+                    const isAndroid = /Android/i.test(navigator.userAgent || '');
+                    const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent || '');
+
+                    if (isAndroid) {
+                        // Use Android intent which is more reliable for opening the LinkedIn app when installed.
+                        const intentUrl = `intent://in/luan-moreno10/#Intent;package=com.linkedin.android;scheme=https;end`;
+                        window.location.href = intentUrl;
+                        // Fallback to web LinkedIn
+                        setTimeout(() => {
+                            window.location.href = webLinkedIn;
+                        }, 800);
+                    } else if (isIOS) {
+                        // Try LinkedIn URL scheme on iOS (LinkedIn app supports linkedin://)
+                        const linkedInScheme = 'linkedin://in/luan-moreno10/';
+                        // Attempt to open LinkedIn app
+                        window.location.href = linkedInScheme;
+                        // If that doesn't work, after a short delay open web LinkedIn
+                        setTimeout(() => {
+                            window.location.href = webLinkedIn;
+                        }, 800);
+                    } else {
+                        // Desktop: open web LinkedIn in a new tab
+                        window.open(webLinkedIn, '_blank', 'noopener');
+                    }
+                }}
                 >
                     <SiLinkedin size={36} color="#0A66C2" />
                 </a>
