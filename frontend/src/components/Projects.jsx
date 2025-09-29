@@ -9,8 +9,8 @@ const data = [
     {
     title: 'Mikrotik Router Automation',
     badge: 'Networking',
-    desc: 'Provisioning and configuring Mikrotik routers using Ansible playbooks. This project automates tasks such as setting up firewall rules, managing user access, and configuring network interfaces, streamlining the deployment and management of Mikrotik devices in a network environment.',
-    tags: ['Bash','RouterOS','Ansible'],
+    desc: 'Provisioning and configuring Mikrotik routers using WinBox. This project automates tasks such as setting up firewall rules, managing user access, and configuring network interfaces, streamlining the deployment and management of Mikrotik devices in a network environment.',
+    tags: ['Bash','RouterOS','WinBox','Networking'],
     link: ''
     },
     {
