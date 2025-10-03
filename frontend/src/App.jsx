@@ -4,7 +4,7 @@ import Hero from './components/Hero.jsx';
 import About from './components/About.jsx';
 import Projects from './components/Projects.jsx';
 import Skills from './components/Skills.jsx';
-import Contact from './components/Contact.jsx';
+import Footer from './components/Footer.jsx';
 
 export default function App() {
   return (
@@ -15,9 +15,8 @@ export default function App() {
         <About /> {/* Second section - About me */}
         <Projects /> {/* Third section - My projects */}
         <Skills /> {/* Fourth section - My skills */}
-        <Contact /> {/* Fifth section - Contact me */}
       </main>
-      <footer className="footer">@ {new Date().getFullYear()} Luan Moreno</footer>
+      <Footer />
     </>
   );
 }

@@ -16,6 +16,37 @@ export default function Navbar() {
     };
   }, []);
 
+  const handleSmoothScroll = (e, targetId) => {
+    e.preventDefault();
+    setOpen(false); // Close mobile menu
+    
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      const navbarHeight = 80; // Approximate navbar height
+      const elementPosition = targetElement.offsetTop;
+      const offsetPosition = elementPosition - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
+  const handleContactClick = (e) => {
+    e.preventDefault();
+    setOpen(false); // Close mobile menu
+    
+    // Scroll to footer contact section
+    const footer = document.querySelector('.footer-container');
+    if (footer) {
+      footer.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <header className="navbar">
       <div className="container navbar-inner">
@@ -23,22 +54,28 @@ export default function Navbar() {
           <span className="logo" /><h3>Luan Moreno</h3>
         </div>
         <nav className="nav-links">
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
+          <a href="#about" onClick={(e) => handleSmoothScroll(e, 'about')}>About</a>
+          <a href="#projects" onClick={(e) => handleSmoothScroll(e, 'projects')}>Projects</a>
+          <a href="#skills" onClick={(e) => handleSmoothScroll(e, 'skills')}>Skills</a>
+          <a href="#contact" onClick={handleContactClick}>Contact</a>
         </nav>
         {isMobile && (
           <button className="menu-button" onClick={() => setOpen(!open)}>
-            {open ? "x" : "☰"}
+            <span className="menu-icon">
+              <span className={`menu-line ${open ? 'open' : ''}`}></span>
+              <span className={`menu-line ${open ? 'open' : ''}`}></span>
+              <span className={`menu-line ${open ? 'open' : ''}`}></span>
+            </span>
           </button>
         )}
       </div>
       {/* Mobile Menu */}
       {isMobile && (
         <div className={`mobile-nav-links ${open ? "open" : ""}`}>
-          <a href="#about" onClick={() => setOpen(false)}>About</a>
-          <a href="#projects" onClick={() => setOpen(false)}>Projects</a>
-          <a href="#contact" onClick={() => setOpen(false)}>Contact</a>
+          <a href="#about" onClick={(e) => handleSmoothScroll(e, 'about')}>About</a>
+          <a href="#projects" onClick={(e) => handleSmoothScroll(e, 'projects')}>Projects</a>
+          <a href="#skills" onClick={(e) => handleSmoothScroll(e, 'skills')}>Skills</a>
+          <a href="#contact" onClick={handleContactClick}>Contact</a>
         </div>
       )}
     </header>
