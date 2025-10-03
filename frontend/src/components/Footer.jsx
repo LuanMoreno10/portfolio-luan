@@ -60,8 +60,38 @@ export default function Footer() {
                             href="https://www.linkedin.com/in/luan-moreno10/"
                             className="footer-social-link"
                             aria-label="LinkedIn"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            onClick={(e) => {
+                                try {
+                                    e.preventDefault();
+                                } catch (err) {
+                                    // ignore
+                                }
+
+                                const linkedinProfile = 'https://www.linkedin.com/in/luan-moreno10/';
+                                const isAndroid = /Android/i.test(navigator.userAgent || '');
+                                const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent || '');
+
+                                if (isAndroid) {
+                                    // Try LinkedIn app intent for Android
+                                    const intentUrl = `intent://profile/luan-moreno10#Intent;package=com.linkedin.android;scheme=linkedin;end`;
+                                    window.location.href = intentUrl;
+                                    // Fallback to web LinkedIn
+                                    setTimeout(() => {
+                                        window.location.href = linkedinProfile;
+                                    }, 800);
+                                } else if (isIOS) {
+                                    // Try LinkedIn app URL scheme for iOS
+                                    const linkedinScheme = `linkedin://profile/luan-moreno10`;
+                                    window.location.href = linkedinScheme;
+                                    // Fallback to web LinkedIn
+                                    setTimeout(() => {
+                                        window.location.href = linkedinProfile;
+                                    }, 800);
+                                } else {
+                                    // Desktop: open in new tab
+                                    window.open(linkedinProfile, '_blank', 'noopener noreferrer');
+                                }
+                            }}
                         >
                             <SiLinkedin size={20} />
                             <span>LinkedIn</span>
