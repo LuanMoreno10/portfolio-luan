@@ -51,7 +51,7 @@ export default function Navbar() {
     <header className="navbar">
       <div className="container navbar-inner">
         <div className="brand">
-          <span className="logo" /><h3>Luan Moreno</h3>
+          <span className="logo" /><h3> Luan Moreno</h3>
         </div>
         <nav className="nav-links">
           <a href="#about" onClick={(e) => handleSmoothScroll(e, 'about')}>About</a>

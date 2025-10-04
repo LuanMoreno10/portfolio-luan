@@ -1,4 +1,3 @@
-import React from "react";
 import { SiGmail, SiLinkedin } from "react-icons/si";
 import '../styles.css';
 
@@ -10,7 +9,7 @@ export default function Contact(){
             <div className="contact-info">
                 <a
                     href="https://mail.google.com/mail/?view=cm&fs=1&to=luan22moreno14@gmail.com"
-                    className="cemail-btn"
+                    className="email-btn"
                     aria-label="Email"
                     rel="noopener noreferrer"
                     onClick={(e) => {
@@ -37,8 +36,8 @@ export default function Contact(){
                                 window.location.href = webGmail;
                             }, 800);
                         } else if (isIOS) {
-                            // Try Gmail URL scheme on iOS (Gmail app supports googlegmail://)
-                            const gmailScheme = `googlegmail://co?to=${email}`;
+                            // Try Gmail URL scheme on iOS (Gmail app supports gmail://)
+                            const gmailScheme = `gmail://co?to=${email}`;
                             // Attempt to open Gmail app
                             window.location.href = gmailScheme;
                             // If that doesn't work, after a short delay open web Gmail
@@ -64,7 +63,7 @@ export default function Contact(){
                 </a>
                 <a 
                 href="https://www.linkedin.com/in/luan-moreno10/"
-                className="clinkedin-btn"
+                className="linkedin-btn"
                 aria-label="LinkedIn"
                 target="_blank"
                 rel="noopener noreferrer"
