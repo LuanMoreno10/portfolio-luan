@@ -11,7 +11,7 @@ function Hero() {
         <p className="hero-role">Software Engineer</p>
         <h1 className="hero-name">Luan Moreno</h1>
         <div className="hero-actions">
-          <a href="/luanCV.pdf" download="luanCV.pdf" className='btn' aria-label="Download CV">Download CV</a>
+          <a href="/Luan_AlvesCV.pdf" download="Luan_AlvesCV.pdf" className='btn' aria-label="Download CV">Download CV</a>
         </div>
       </div>
     </section>
