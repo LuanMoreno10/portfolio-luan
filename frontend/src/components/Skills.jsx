@@ -5,10 +5,9 @@ export default function Skills() {
                 <div className="skills-header">
                     <h2 className="section-title">
                         Technical Skills
-                        <span role="img" aria-label="brain"> 🧠</span> 
                     </h2>
                     <p className="section-sub">
-                        Technologies and tools I use to build amazing projects
+                        Technologies and tools I use to build projects
                     </p>
                 </div>
 
