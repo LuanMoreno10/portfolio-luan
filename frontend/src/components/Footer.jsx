@@ -4,14 +4,14 @@ import '../styles.css';
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
-    
+
     return (
         <footer className="footer-container">
             <div className="footer-content">
                 <div className="footer-section">
-                    <h4 className="footer-subtitle">Contact</h4>
+                    <h2 className="section-title" style={{ fontSize: '2rem', marginBottom: '2rem' }}>Let's Connect</h2>
                     <div className="footer-socials">
-                        <a 
+                        <a
                             href="https://mail.google.com/mail/?view=cm&fs=1&to=luan22moreno14@gmail.com"
                             className="footer-social-link"
                             aria-label="Email"
@@ -55,8 +55,8 @@ export default function Footer() {
                             <SiGmail size={20} />
                             <span>Email</span>
                         </a>
-                        
-                        <a 
+
+                        <a
                             href="https://www.linkedin.com/in/luan-moreno10/"
                             className="footer-social-link"
                             aria-label="LinkedIn"
@@ -96,8 +96,8 @@ export default function Footer() {
                             <SiLinkedin size={20} />
                             <span>LinkedIn</span>
                         </a>
-                        
-                        <a 
+
+                        <a
                             href="https://github.com/LuanMoreno10"
                             className="footer-social-link"
                             aria-label="GitHub"
@@ -110,7 +110,7 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            
+
             <div className="footer-bottom">
                 <div className="footer-bottom-content">
                     <p className="footer-copyright">

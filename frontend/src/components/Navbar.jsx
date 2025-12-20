@@ -19,7 +19,7 @@ export default function Navbar() {
   const handleSmoothScroll = (e, targetId) => {
     e.preventDefault();
     setOpen(false); // Close mobile menu
-    
+
     const targetElement = document.getElementById(targetId);
     if (targetElement) {
       const navbarHeight = 80; // Approximate navbar height
@@ -36,11 +36,11 @@ export default function Navbar() {
   const handleContactClick = (e) => {
     e.preventDefault();
     setOpen(false); // Close mobile menu
-    
+
     // Scroll to footer contact section
     const footer = document.querySelector('.footer-container');
     if (footer) {
-      footer.scrollIntoView({ 
+      footer.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
       });
@@ -51,7 +51,7 @@ export default function Navbar() {
     <header className="navbar">
       <div className="container navbar-inner">
         <div className="brand">
-          <span className="logo" /><h3> Luan Moreno</h3>
+          Luan Moreno
         </div>
         <nav className="nav-links">
           <a href="#about" onClick={(e) => handleSmoothScroll(e, 'about')}>About</a>
