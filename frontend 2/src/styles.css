@@ -136,15 +136,20 @@ a {
 
 /* Navbar */
 .navbar {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 50;
-    background: var(--bg);
+    background: rgba(11, 15, 25, 0.8);
+    /* Slightly more transparent for glass effect */
     /* Match body background */
     backdrop-filter: blur(16px);
-    border-bottom: none;
-    /* Seamless look */
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    /* Subtle border for separation */
     padding: 1rem 0;
+    transition: all 0.3s ease;
 }
 
 .navbar-inner {
@@ -158,6 +163,7 @@ a {
     font-size: 1.25rem;
     letter-spacing: -0.03em;
     color: #ffffff;
+    cursor: pointer;
     /* Solid white */
 }
 
@@ -438,5 +444,181 @@ a {
 
     .tech-icons-img {
         max-width: 90%;
+    }
+}
+
+/* Mobile Menu Styles */
+.menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    z-index: 40;
+    /* Lower than overlay */
+    color: #ffffff;
+}
+
+.menu-icon {
+    width: 24px;
+    height: 18px;
+    /* Adjusted height */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-line {
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    border-radius: 2px;
+}
+
+/* Mobile Nav Overlay */
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    /* Use dynamic viewport height */
+    background: rgba(11, 15, 25, 0.98);
+    /* Less transparent for cleaner look */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 100;
+    /* Highest z-index */
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    transition: all 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.mobile-nav-overlay.open {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Mobile Menu Header */
+.mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+    width: 100%;
+}
+
+.menu-close-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #fff;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.menu-close-btn:active {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(0.95);
+}
+
+/* Mobile Content */
+.mobile-menu-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.mobile-nav-links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.mobile-nav-links-list a {
+    font-size: 2.5rem;
+    /* Large font size */
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: -0.02em;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Staggered Animation when open */
+.mobile-nav-overlay.open .mobile-nav-links-list a {
+    animation: slideUpFade 0.5s forwards;
+}
+
+.mobile-nav-links-list a:hover,
+.mobile-nav-links-list a:active {
+    color: #fff;
+    padding-left: 12px;
+    /* Slight movement on interaction */
+}
+
+/* Mobile Footer Area */
+.mobile-menu-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 24px;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.mobile-nav-overlay.open .mobile-menu-footer {
+    animation: slideUpFade 0.5s forwards;
+}
+
+.mobile-cv-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 16px;
+    font-size: 1.1rem;
+}
+
+.mobile-socials {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+}
+
+.mobile-socials a {
+    color: var(--text-muted);
+    padding: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-socials a:hover {
+    color: #fff;
+    background: var(--primary);
+    transform: translateY(-4px);
+}
+
+@keyframes slideUpFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
