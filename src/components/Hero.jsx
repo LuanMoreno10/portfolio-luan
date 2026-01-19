@@ -5,7 +5,7 @@ function Hero() {
   return (
     <section className="hero-centered">
       <div className="hero-profile animate-fade-in">
-        <img src="/images/profile-image.jpg" alt="Luan Moreno" className="profile-img" />
+        <img src="/images/profile-image-optimized.jpg" alt="Luan Moreno" className="profile-img" />
       </div>
       <div className="hero-info">
         <p className="hero-role animate-fade-in delay-100">Software Engineer</p>
