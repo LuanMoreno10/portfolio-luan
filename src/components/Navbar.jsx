@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { SiGmail, SiLinkedin, SiGithub } from "react-icons/si";
-import { IoClose } from "react-icons/io5"; // Import close icon
+import { IoClose } from "react-icons/io5";
 import "../styles.css";
 
 export default function Navbar() {
