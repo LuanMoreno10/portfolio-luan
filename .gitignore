@@ -22,3 +22,5 @@ Thumbs.db
 # Ambiente local
 .env
 .env.local
+# Claude Code local config
+.claude/
