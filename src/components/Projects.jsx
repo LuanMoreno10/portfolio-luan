@@ -1,24 +1,43 @@
+import React from 'react';
+import { LuArrowUpRight } from 'react-icons/lu';
 import { projectsData } from '../data.js';
 
 export default function Projects() {
-    return (
-        <section id="projects" className="section">
-            <div className="container">
-                <h2 className="section-title">Main Projects</h2>
-                <div className="grid grid-3">
-                    {projectsData.map((p, i) => (
-                        <article className="card" key={i}>
-                            <div className="card-body">
-                                <div className="badge">{p.badge}</div>
-                                <h3>{p.title}</h3>
-                                <p>{p.desc}</p>
-                                <div className="tags">{p.tags.map(t => <span className="tag" key={t}>{t}</span>)}</div>
-                                {p.link && <p><a href={p.link}>Ver mais →</a></p>}
-                            </div>
-                        </article>
-                    ))}
-                </div>
+  return (
+    <section id="projects">
+      <h2 className="headline">Selected work</h2>
+
+      <div className="eyebrow-rule">
+        <span className="eyebrow">Projects</span>
+      </div>
+
+      <div className="projects">
+        {projectsData.map((project) => (
+          <article className="project" key={project.title}>
+            <span className="project-badge">{project.badge}</span>
+            <h3>{project.title}</h3>
+            <p>{project.desc}</p>
+
+            <div className="project-tags">
+              {project.tags.map((tag) => (
+                <span className="project-tag" key={tag}>{tag}</span>
+              ))}
             </div>
-        </section>
-    );
+
+            {project.link && (
+              <a
+                className="project-link"
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View on GitHub
+                <LuArrowUpRight size={14} strokeWidth={1.8} />
+              </a>
+            )}
+          </article>
+        ))}
+      </div>
+    </section>
+  );
 }

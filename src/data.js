@@ -1,28 +1,86 @@
-
 export const projectsData = [
     {
-    title: 'Data Analysis - Relationship between crime and unemployment across US States',
-    badge: 'Data Science',
-    desc: 'This project explores the relationship between unemployment and crime trends in the United States using two publicly available datasets: the FBI’s Estimated Crime Data (1960–2019) and state-level unemployment statistics from the U.S. Bureau of Labor Statistics (1976-2022). By combining these datasets, we aim to uncover patterns and correlations that may shed light on whether changes in unemployment rates can help explain fluctuations in criminal activity.',
-    tags: ['Python','FastAPI','Jupyter','Pandas','Matplotlib'],
-    link: 'https://github.com/LuanMoreno10/AD_finalProject'
+        title: 'Crime & Unemployment Across US States',
+        badge: 'Data Science',
+        desc: 'Explores the relationship between unemployment and crime trends in the US, combining the FBI’s Estimated Crime Data (1960–2019) with state-level unemployment statistics from the Bureau of Labor Statistics (1976–2022) to surface patterns and correlations between the two.',
+        tags: ['Python', 'FastAPI', 'Jupyter', 'Pandas', 'Matplotlib'],
+        link: 'https://github.com/LuanMoreno10/AD_finalProject'
     },
     {
-    title: 'Mikrotik Router Automation',
-    badge: 'Networking',
-    desc: 'Provisioning and configuring Mikrotik routers using WinBox. This project automates tasks such as setting up firewall rules, managing user access, and configuring network interfaces, streamlining the deployment and management of Mikrotik devices in a network environment.',
-    tags: ['Bash','RouterOS','WinBox','Networking'],
-    link: ''
+        title: 'Mikrotik Router Automation',
+        badge: 'Networking',
+        desc: 'Provisioning and configuring Mikrotik routers through WinBox. Automates firewall rules, user access management and network interface setup, streamlining the deployment of Mikrotik devices across a network.',
+        tags: ['Bash', 'RouterOS', 'WinBox', 'Networking'],
+        link: ''
     },
     {
-    title: 'SchoolAir Monitoring System',
-    badge: 'Software',
-    desc: 'The SchoolAir project was developed to monitor and improve air quality in classrooms. Using IoT sensors, the system collects and processes data on temperature, humidity, suspended particles (PM2.5 and PM10), and CO2 levels, employing concurrent programming techniques for efficient data analysis.',
-    tags: ['C', 'OS', 'Linux'],
-    link: 'https://github.com/LuanMoreno10/SO_Finalproject'
+        title: 'SchoolAir Monitoring System',
+        badge: 'Software',
+        desc: 'An IoT system built to monitor and improve classroom air quality. Sensors collect temperature, humidity, particulate matter (PM2.5 / PM10) and CO2 readings, processed with concurrent programming techniques for efficient analysis.',
+        tags: ['C', 'OS', 'Linux'],
+        link: 'https://github.com/LuanMoreno10/SO_Finalproject'
     }
 ];
 
-export const skillsData = [
-    // Add skills data here if we decide to refactor Skills.jsx later
+/* Shown as the monochrome band under the hero. */
+export const techStrip = [
+    'Python',
+    'JavaScript',
+    'React',
+    'Java',
+    'PostgreSQL',
+    'Linux'
 ];
+
+/* The four areas of work, mirroring the services grid in the reference. */
+export const servicesData = [
+    {
+        icon: 'code',
+        title: 'Software Development',
+        desc: 'Building applications in C, Python, Java and JavaScript — from low-level systems to web interfaces.'
+    },
+    {
+        icon: 'network',
+        title: 'Networks',
+        desc: 'Designing, provisioning and automating network infrastructure, routing and firewall configuration.'
+    },
+    {
+        icon: 'shield',
+        title: 'Security & Systems',
+        desc: 'Systems administration on Linux, hardening, access management and keeping services running reliably.'
+    },
+    {
+        icon: 'chart',
+        title: 'Data & Analysis',
+        desc: 'Turning raw datasets into readable insight with Pandas, Matplotlib and reproducible notebooks.'
+    }
+];
+
+/* ---------------------------------------------------------------------------
+   Contact details — single source of truth for every link on the page.
+   --------------------------------------------------------------------------- */
+
+const EMAIL = 'luan22moreno14@gmail.com';
+
+/* Digits only, with country code and no "+" or spaces (wa.me format).
+   351 = Portugal. */
+const WHATSAPP_NUMBER = '351932463605';
+
+export const contact = {
+    email: EMAIL,
+
+    /* A bare mailto: does nothing on a desktop with no mail client configured,
+       which is why the old links looked broken. Gmail's web compose always
+       opens; the mailto: stays as the handler for mobile mail apps. */
+    emailHref: `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL}`,
+    mailto: `mailto:${EMAIL}`,
+
+    linkedin: 'https://www.linkedin.com/in/luan-moreno10',
+    github: 'https://github.com/LuanMoreno10',
+
+    whatsapp: WHATSAPP_NUMBER
+        ? `https://wa.me/${WHATSAPP_NUMBER}`
+        : '',
+
+    cv: '/LuanCV.pdf'
+};

@@ -1,23 +1,26 @@
 import React from 'react';
-import '../styles.css';
+import Navbar from './Navbar.jsx';
 
-function Hero() {
+export default function Hero() {
   return (
-    <section className="hero-centered">
-      <div className="hero-profile animate-fade-in">
-        <img src="/images/profile-image-optimized.jpg" alt="Luan Moreno" className="profile-img" />
+    <section className="hero">
+      <Navbar />
+
+      <div className="hero-avatar rise">
+        <img src="/images/profile-image-optimized.jpg" alt="Luan Moreno" />
+        <span className="hero-chip">Luan Alves 👋</span>
       </div>
-      <div className="hero-info">
-        <p className="hero-role animate-fade-in delay-100">Software Engineer</p>
-        <h1 className="hero-name animate-fade-in delay-200">Luan Moreno</h1>
-        <div className="hero-actions animate-fade-in delay-300">
-          <a href="/LuanCV.pdf" download="LuanCV.pdf" className='btn btn-primary' aria-label="Download CV">
-            Download CV
-          </a>
-        </div>
+
+      <h1 className="display rise d1">
+        Building software, networks, and systems.
+      </h1>
+
+      <div className="hero-cta rise d2">
+        <a className="btn btn--dark" href="#projects">
+          Latest Projects
+          <span aria-hidden="true">↗</span>
+        </a>
       </div>
     </section>
   );
 }
-
-export default Hero;

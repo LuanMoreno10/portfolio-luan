@@ -1,26 +1,37 @@
-export default function Skills() {
-    return (
-        <section id="skills" className="section">
-            <div className="container">
-                <div className="skills-header">
-                    <h2 className="section-title">
-                        Technical Skills
-                    </h2>
-                    <p className="section-sub">
-                        Technologies and tools I use to build projects
-                    </p>
-                </div>
+import React from 'react';
+import { LuCode, LuNetwork, LuShieldCheck, LuChartLine } from 'react-icons/lu';
+import { servicesData } from '../data.js';
 
-                <div className="tech-stack">
-                    <div className="tech-icons">
-                        <img
-                            src="https://skillicons.dev/icons?i=c,cpp,py,js,react,html,css,grafana,java,postgres,linux,nodejs,vscode,gitlab,notion"
-                            alt="Technology stack: C, C++, Python, JavaScript, React, HTML, CSS, Grafana, Java, PostgreSQL, Linux, Node.js, VS Code, GitLab, Notion"
-                            className="tech-icons-img"
-                        />
-                    </div>
-                </div>
+const icons = {
+  code: LuCode,
+  network: LuNetwork,
+  shield: LuShieldCheck,
+  chart: LuChartLine
+};
+
+export default function Skills() {
+  return (
+    <section id="skills">
+      <h2 className="headline">
+        Turning ideas into software that runs reliably.
+      </h2>
+
+      <div className="eyebrow-rule">
+        <span className="eyebrow">What I work on</span>
+      </div>
+
+      <div className="services">
+        {servicesData.map((service) => {
+          const Icon = icons[service.icon];
+          return (
+            <div className="service" key={service.title}>
+              <Icon className="service-icon" size={22} strokeWidth={1.4} />
+              <h3>{service.title}</h3>
+              <p>{service.desc}</p>
             </div>
-        </section>
-    );
+          );
+        })}
+      </div>
+    </section>
+  );
 }
