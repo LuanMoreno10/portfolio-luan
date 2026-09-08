@@ -10,10 +10,26 @@
         <!-- Favicon -->
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-        <!-- Fonts -->
+        <!-- LCP image: the hero avatar is the largest element painted first,
+             preload it so the browser fetches it before it even parses the
+             component that needs it. -->
+        <link rel="preload" as="image" href="/images/profile-avatar.webp" type="image/webp" fetchpriority="high" />
+
+        <!-- Fonts — loaded without blocking first paint: the stylesheet
+             fetches with a non-blocking "print" media query, then swaps to
+             "all" once it arrives. Text renders in the fallback font
+             immediately (display=swap) and re-flows once Poppins/Inter land. -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Inter:wght@400;500&display=swap"
+            media="print"
+            onload="this.media='all'"
+        />
+        <noscript>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Inter:wght@400;500&display=swap" />
+        </noscript>
     </head>
     <body>
         <div id="root"></div>

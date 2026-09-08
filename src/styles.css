@@ -590,6 +590,13 @@ h3 {
         padding: 56px 22px;
     }
 
+    /* On a short viewport, centering the hero inside a full-height panel
+       pushes the navbar far from the top — anchor it near the top instead. */
+    .panel--hero {
+        min-height: auto;
+        justify-content: flex-start;
+    }
+
     .topbar {
         margin-bottom: 44px;
         gap: 12px;

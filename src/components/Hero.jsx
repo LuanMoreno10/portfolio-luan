@@ -7,7 +7,16 @@ export default function Hero() {
       <Navbar />
 
       <div className="hero-avatar rise">
-        <img src="/images/profile-image-optimized.jpg" alt="Luan Moreno" />
+        <picture>
+          <source srcSet="/images/profile-avatar.webp" type="image/webp" />
+          <img
+            src="/images/profile-avatar.jpg"
+            alt="Luan Alves"
+            width="230"
+            height="153"
+            fetchpriority="high"
+          />
+        </picture>
         <span className="hero-chip">Luan Alves 👋</span>
       </div>
 
