@@ -349,6 +349,13 @@ h3 {
 .menu-overlay {
     position: fixed;
     inset: 0;
+    /* iOS Safari sizes a fixed, full-screen element against the viewport as
+       if its address bar were hidden, even while it's showing — pushing
+       content below the part of the screen actually visible. dvh tracks
+       the real visible height instead; the vh line is the fallback for
+       browsers that don't support dvh. */
+    height: 100vh;
+    height: 100dvh;
     background: rgba(28, 28, 28, 0.4);
     backdrop-filter: blur(3px);
     z-index: 100;
