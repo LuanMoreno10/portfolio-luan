@@ -1,9 +1,9 @@
 import React from 'react';
 import Hero from './components/Hero.jsx';
-import TechStrip from './components/TechStrip.jsx';
-import About from './components/About.jsx';
 import Projects from './components/Projects.jsx';
-import Skills from './components/Skills.jsx';
+import About from './components/About.jsx';
+import WhatIBuild from './components/WhatIBuild.jsx';
+import TechSkills from './components/TechSkills.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
 
@@ -16,31 +16,31 @@ export default function App() {
           <Hero />
         </section>
 
-        <section className="panel panel--alt panel--flush">
-          <div className="inner">
-            <TechStrip />
+        <section className="panel panel--alt" id="projects">
+          <div className="inner inner--wide">
+            <Projects />
           </div>
         </section>
 
-        <section className="panel">
+        <section className="panel" id="about">
           <div className="inner">
             <About />
           </div>
         </section>
 
-        <section className="panel panel--alt">
+        <section className="panel panel--alt" id="build">
           <div className="inner">
-            <Skills />
+            <WhatIBuild />
           </div>
         </section>
 
-        <section className="panel">
+        <section className="panel" id="skills">
           <div className="inner">
-            <Projects />
+            <TechSkills />
           </div>
         </section>
 
-        <section className="panel">
+        <section className="panel" id="contact">
           <div className="inner">
             <Contact />
           </div>
